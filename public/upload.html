@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Files - DWINDLE FORGE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Base Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Font & Background */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+/* Header */
+.site-header {
+  background: #1f1f1f;
+  padding: 10px 40px;  /* smaller vertical padding */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Rounded rectangle background for logo + text */
+.logo-container.rounded-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #d3d3d3;    /* light gray */
+  padding: 5px 15px;
+  border-radius: 12px;
+}
+
+.logo {
+  width: 40px;   /* smaller logo */
+  height: 40px;
+  object-fit: contain;
+}
+
+.site-header h1 {
+  font-weight: 700;
+  font-size: 1.4rem;      /* smaller font size */
+  color: #121212;         /* dark text for contrast on light bg */
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+
+
+    /* Main content */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .upload-container {
+      background: #222222;
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+      width: 400px;
+      max-width: 90vw;
+      margin: auto;
+      text-align: center;
+    }
+
+    .upload-container h2 {
+      color: #ffffff;
+      margin-bottom: 30px;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    .upload-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .upload-form label {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #bbbbbb;
+    }
+
+    .upload-form input[type="file"] {
+      padding: 8px;
+      background: #333333;
+      border-radius: 6px;
+      border: none;
+      color: #eee;
+    }
+
+    .upload-form input[type="file"]::file-selector-button {
+      background: #00b894;
+      border: none;
+      padding: 8px 15px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-form input[type="file"]::file-selector-button:hover {
+      background: #019874;
+    }
+
+    .btn-primary {
+      padding: 14px;
+      background: #00b894;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #019874;
+    }
+
+    .guidelines {
+      margin-top: 40px;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      color: #ccc;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .guidelines h3 {
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #00b894;
+    }
+
+    .guidelines ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      line-height: 1.5;
+    }
+
+    .guidelines li {
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #1f1f1f;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 0.9rem;
+      color: #666666;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 450px) {
+      .upload-container {
+        width: 95%;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo-container rounded-box">
+    <img src="LOGO1.png" alt="DWINDLE FORGE Logo" class="logo" />
+    <h1>DWINDLE FORGE</h1>
+  </div>
+</header>
+
+  <main>
+    <section class="upload-container">
+      <h2>Upload Your Files</h2>
+      <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+        <label for="file">Select file to upload</label>
+        <input type="file" id="file" name="file" required />
+        <button type="submit" class="btn-primary">Upload to MEGA</button>
+      </form>
+
+      <section class="guidelines">
+        <h3>Security & Upload Guidelines</h3>
+        <ul>
+          <li>Only upload files you have the rights to share.</li>
+          <li>Do not upload any confidential or sensitive information.</li>
+          <li>Maximum file size allowed: 2 GB.</li>
+          <li>Supported file types: all common document, image, video formats.</li>
+          <li>Please ensure your files are virus-free before uploading.</li>
+          <li>Uploads are securely stored on MEGA’s encrypted cloud.</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 DWINDLE FORGE. All rights reserved.</p>
+  </footer>
+</body>
+</html>
